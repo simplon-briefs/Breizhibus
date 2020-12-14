@@ -1,27 +1,33 @@
-from tkinter import *
-from query import Query
+import mysql.connector
 
-class Root:
+class Query():
     def __init__(self):
-        self.root=Tk()
-        self.root.title =("titre")
-        self.root.geometry("900x1130")
-        self.root.minsize(480, 360)
-        self.root.config(background="white")
+        self.mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="root",
+            database="breizhibus")
+        self.cursor = self.mydb.cursor()
 
-        self.compute()
 
-    def compute(self):
-        self.display_ligne()
+    def get_all_arrets_lignes(self):
+        self.cursor.execute("""SELECT * FROM arrets_lignes""")
+        return self.cursor.fetchall()
 
-    def a(self, text):
-        print(text)
+    def BFS(self, target=19):
+        piste = []
+        fifo = []
+        item = self.get_all_arrets_lignes()
+        for i in item:
+            if i[1] == target:
+                piste.append(i)
+        for i in piste:
+            for y in item:
+                if y[0] == i[0]:
+                    fifo.append(y)
+        print(fifo)
 
-    def display_ligne(self):
-        var1= IntVar()
-        ligne_of_bus = [('Rouge',), ('Vert',), ('Bleu',), ('Noir',)]
-        frame_ligne = Frame(self.root).pack()
-        for i in ligne_of_bus:
-            Label(frame_ligne, )
 
-Root().root.mainloop()
+
+
+print(Query().BFS())
