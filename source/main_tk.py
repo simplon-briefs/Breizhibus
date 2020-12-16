@@ -26,7 +26,6 @@ class Root:
 
 
     def display_ligne(self):
-        photo = PhotoImage(file="/Users/guillaumeverpoest/Desktop/isen-Project/Briefs/Breizhibus/Images/del.png")
         frame = Frame(self.root).grid()
         j=0
         for i in Query().get_info_bus():
@@ -79,7 +78,7 @@ class Root:
 
         Frame(frame, bg='gray', width=50, height=50).grid(columnspan=10, sticky=W+E)
         j+=7
-        Label4 = Label(self.root, text = 'Selection une depart et un arrive')
+        Label4 = Label(self.root, text = 'Selection un depart et un arrive')
         Label4.grid(column=2, row=j, sticky='w')
         Champ = Entry(self.root, textvariable= self.start, width=31)
         Champ.focus_set()

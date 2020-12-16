@@ -26,6 +26,7 @@ class Query():
                                 INNER JOIN arrets_lignes ON arrets.id_arret = arrets_lignes.id_arret 
                                 WHERE id_ligne = (SELECT id_ligne FROM lignes WHERE nom = '%s')"""%(ligne))
 
+
             arret_ligne["arrets"] = self.cursor.fetchall()
             self.cursor.execute("""SELECT numeros FROM bus
                                 INNER JOIN lignes ON lignes.id_ligne = bus.id_ligne 
@@ -103,8 +104,12 @@ class Query():
         self.cursor.execute("""SELECT id_ligne, id_arret FROM arrets_lignes WHERE id_arret = %d"""%(id_arret))
         end = (self.cursor.fetchall())
         a = []
+        print(start)
+        print(end)
         for i in start:
             for j in end:
+                print("if ",i[0], " == ", j[0])
                 if i[0] == j[0]:
                     a.append(i[0])
         return a
+Query().get_id_arret("Viviane", "Korrigan")

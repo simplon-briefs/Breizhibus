@@ -1,30 +1,36 @@
-# Breizhibus, gestion de lignes de bus
-[Lien Breizhibus](https://simplonline.co/briefs/7bd6851f-f46f-4109-b4c8-d637dd5b2f5c)
+# Breizhibus
 
+### Ma fenetre entier 
+<img src="img/main.png">
 
-## livrables
+---
+<img src="img/ligne.png">
+<p>Mon graphique va appeler une fonction dans mon fichier *Query* qui va recupere toute les ligne ainsi que des informations, pour ensuite les afficher</p>
 
-Sur Github :<br>- une fichier SQL qui contient tout ce qu'il faut pour importer la base.<br>- votre code<br>- un readme.md documenté, avec captures d'écran, qui explique, dans un premier chapitre le fonctionnement de votre appli, dans un second les choix techniques fait (par exemple, utiliser le connecteur MySQL), et dans un troisième les difficultés rencontrées et la façon de les résoudre (par exemple un lien vers un tuto qui vous a aidé).
+---
+<img src="img/info_ligne.png">
 
-***
+<p>Je prend un nom de ligne et va chercher dans la base de donne les bus ainsi que les arrets de cette ligne </p>
 
-## Contexte du projet
+---
+<img src="img/formulaire.png">
+<p>Je prend Numeros du bus, Nombre de place, Immatriculation, ligne et les envois a la base de donne a travers une fonction. La fonction va verifier si le bus existe pas ou si la ligne esixte si c'est le cas elle va renvoyer une pop up avec l'erreur</p>
 
-Votre première mission est de mettre en place les bases de cette appli. Vous devez créer et remplir la base de donnée comme demandé dans la documentation client (Kata 1 MySQL) et préparer un code Python qui affiche la liste des lignes. Ce code doit aussi, pour une ligne choisie, afficher la liste des arrêts de cette ligne. L'affichage en mode console suffit pour cette première phase, mais si vous avez le temps, vous pouvez préparer une interface plus évoluée.
+---
+<img src="img/gps.png">
+<p>Je prend 2 arrets et je verifie si il a une ligne en commun et les affiche en pop up</p>
 
+---
+## Choix techniques
 
+<p>J'ai utiliser la librairie mysql.connector pour faire mes requettes.</p>
+<p>Du language python pour faire mes algo </p>
+<p>La librairie tkinter pour faire le graphique </p>
 
-***
+---
+## Difficultés rencontrées
+<p> j'ai eu pas mal de difficulte avec tkinter je suis pas trés fan du graphique je prefere trés largement faire des algos</p>
 
-## Fonctionnalité
-* Base de donné (MySQL)[x]
-    * Crée et remplir une base de donnée Kata 1 MySQL. 
-    [x] 
-* Algorithme (Python)[]
-    * affiche la liste des lignes.[X]
-    * Pour une ligne choisie, afficher la liste des arrêts de cette ligne.[X]
-    * Pour cette même ligne afficher les bus de cette ligne [X]
-    * Ajouter des bus dans le base de donner et de leur assigner des lignes[]
-    * Pour supprimer et modifier les bus[]
-* Graphique (Django)[]
-    * **interface**
+<p>Esque-ce une erreur de ma part? Mais vers la fin du projet j'ai trouver qu'il me manquer du temp et j'aurais aimer ameliorer mes requette et faire une BFS pour les trajet avec le rendu des katas/briefs j'ai du inbandonné le projet je trouve sa dommage.</p>
+
+<p>J'ai tarder avant de le faire et je me suis laiser surmerger avec les autres projets il me faut plus d'organisation</p>
